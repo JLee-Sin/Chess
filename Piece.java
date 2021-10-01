@@ -2,15 +2,22 @@ package Pieces;
 
 import java.util.ArrayList;
 
-public class Piece {
+//ANYWHERE YOU SEE KING REPLACE IT WITH THE NAME OF YOUR PIECE
+public class King {
 
     private boolean _isAlive;
     private boolean _color; //true=white false=black
     private int[] _position;
 
-    public Piece(boolean color) {
+    public King(boolean color) {
         _color = color;
         _isAlive = true;
+        if(color) {
+            setPosition(new int[]{4,1}); 
+        }
+        else {
+            setPosition(new int[]{4,8});
+        }
     }
 
     public int[] getPosition() {
@@ -25,6 +32,7 @@ public class Piece {
         return _color;
     }
 
+   //REPLACE THIS METHOD WITH YOUR OWN VERSION
     public int[][] findMoves() {
         ArrayList<int[]> moveList = new ArrayList<>();
         int[][] possibleMoves = new int[][] {
